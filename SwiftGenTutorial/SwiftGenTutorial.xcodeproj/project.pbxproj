@@ -16,6 +16,7 @@
 		6DE18E662B53F69000B840C7 /* swiftgen.config.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6DE18E652B53F69000B840C7 /* swiftgen.config.yml */; };
 		6DE18E682B53F7E500B840C7 /* template.stencil in Sources */ = {isa = PBXBuildFile; fileRef = 6DE18E672B53F7E500B840C7 /* template.stencil */; };
 		6DE18E6A2B53F88B00B840C7 /* assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE18E692B53F88A00B840C7 /* assets.generated.swift */; };
+		6DE18E6D2B53FB6F00B840C7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE18E6C2B53FB6F00B840C7 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6DE18E652B53F69000B840C7 /* swiftgen.config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.config.yml; sourceTree = "<group>"; };
 		6DE18E672B53F7E500B840C7 /* template.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.stencil; sourceTree = "<group>"; };
 		6DE18E692B53F88A00B840C7 /* assets.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assets.generated.swift; sourceTree = "<group>"; };
+		6DE18E6C2B53FB6F00B840C7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				6DE18E542B53F3A400B840C7 /* ViewController.swift */,
 				6DE18E562B53F3A400B840C7 /* Main.storyboard */,
 				6DE18E592B53F3A600B840C7 /* Assets.xcassets */,
+				6DE18E6C2B53FB6F00B840C7 /* Colors.xcassets */,
 				6DE18E5B2B53F3A600B840C7 /* LaunchScreen.storyboard */,
 				6DE18E5E2B53F3A600B840C7 /* Info.plist */,
 			);
@@ -91,6 +94,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DE18E612B53F3A600B840C7 /* Build configuration list for PBXNativeTarget "SwiftGenTutorial" */;
 			buildPhases = (
+				6DE18E6B2B53F8DA00B840C7 /* Swift Gen */,
 				6DE18E492B53F3A400B840C7 /* Sources */,
 				6DE18E4A2B53F3A400B840C7 /* Frameworks */,
 				6DE18E4B2B53F3A400B840C7 /* Resources */,
@@ -142,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DE18E6D2B53FB6F00B840C7 /* Colors.xcassets in Resources */,
 				6DE18E5D2B53F3A600B840C7 /* LaunchScreen.storyboard in Resources */,
 				6DE18E5A2B53F3A600B840C7 /* Assets.xcassets in Resources */,
 				6DE18E662B53F69000B840C7 /* swiftgen.config.yml in Resources */,
@@ -150,6 +155,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6DE18E6B2B53F8DA00B840C7 /* Swift Gen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Gen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen >& /dev/null; then\n  swiftgen config run --config SwiftGenTutorial/SwiftGen/swiftgen.config.yml\nelse\n  echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6DE18E492B53F3A400B840C7 /* Sources */ = {
